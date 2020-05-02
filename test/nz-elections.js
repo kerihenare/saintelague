@@ -1,5 +1,50 @@
 const sainteLague = require('../index');
 
+module.exports['2017 NZ election'] = (test) => {
+  const parties = [
+    { votes: 1152075, electorates: 41 },
+    { votes: 956184, electorates: 29 },
+    { votes: 186706, electorates: 0 },
+    { votes: 162443, electorates: 0 },
+    { votes: 63260, electorates: 0 },
+    { votes: 30580, electorates: 0 },
+    { votes: 13075, electorates: 1 },
+    { votes: 8075, electorates: 0 },
+    { votes: 6253, electorates: 0 },
+    { votes: 3642, electorates: 0 },
+    { votes: 3005, electorates: 0 },
+    { votes: 1890, electorates: 0 },
+    { votes: 1782, electorates: 0 },
+    { votes: 1620, electorates: 0 },
+    { votes: 806, electorates: 0 },
+    { votes: 677, electorates: 0 },
+    { votes: 409, electorates: 0 }
+  ];
+
+  const result = sainteLague(parties, { seats: 120 });
+
+  // allocated
+  test.equals(result[0].allocated, 56);
+  test.equals(result[1].allocated, 46);
+  test.equals(result[2].allocated, 9);
+  test.equals(result[3].allocated, 8);
+  test.equals(result[4].allocated, 0);
+  test.equals(result[5].allocated, 0);
+  test.equals(result[6].allocated, 1);
+  test.equals(result[7].allocated, 0);
+  test.equals(result[8].allocated, 0);
+  test.equals(result[9].allocated, 0);
+  test.equals(result[10].allocated, 0);
+  test.equals(result[11].allocated, 0);
+  test.equals(result[12].allocated, 0);
+  test.equals(result[13].allocated, 0);
+  test.equals(result[14].allocated, 0);
+  test.equals(result[15].allocated, 0);
+  test.equals(result[16].allocated, 0);
+
+  test.done();
+};
+
 module.exports['2014 NZ election'] = (test) => {
   const parties = [
     { votes: 1010464, electorates: 41 },
